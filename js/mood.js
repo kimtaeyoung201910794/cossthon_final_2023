@@ -811,28 +811,24 @@ function setResult(){
     
     const resultName = document.querySelector('.resultName');
     resultName.innerHTML = infoList[point].name;
+    if (window.localStorage.getItem("result_data") === null) {
+        const arr = [infoList[point].name];
+        window.localStorage.setItem('result_data', JSON.stringify(arr));
+    }
+    else {
+        const arr = JSON.parse(localStorage.getItem("result_data"));
+        arr.push(infoList[point].name);
+        window.localStorage.setItem('result_data', JSON.stringify(arr));
+    }
 
+    // var resultImg = document.createElement('img');
+    // const imgDiv = document.querySelector("#resultImg");
+    // var imgURL = 'img/image-' +point+'.png';
 
-    // if (window.localStorage.getItem("result_data") === null) {
-    //     const arr = [infoList[point].name];
-    //     // window.localStorage.setItem('result_data', JSON.stringify(arr));
-    // }
-    // else {
-    //     const arr = JSON.parse(localStorage.getItem("result_data"));
-    //     arr.push(infoList[point].name);
-    //     // window.localStorage.setItem('result_data', JSON.stringify(arr));
-    // }
-    
-
-
-    var resultImg = document.createElement('img');
-    const imgDiv = document.querySelector("#resultImg");
-    var imgURL = 'img/image-' +point+'.png';
-
-    resultImg.src = imgURL;
-    resultImg.alt = point;
-    resultImg.classList.add('img-fluid');
-    imgDiv.appendChild(resultImg);
+    // resultImg.src = imgURL;
+    // resultImg.alt = point;
+    // resultImg.classList.add('img-fluid');
+    // imgDiv.appendChild(resultImg);
 
     //point에 반환된 값으로 infoList에서 결과 값들 가져오기
     const resultDesc1 = document.querySelector('.resultDesc1');
@@ -843,11 +839,26 @@ function setResult(){
     //point에 반환된 값으로 infoList에서 결과 값들 가져오기
     const resultDesc2 = document.querySelector('.resultDesc2');
     const resultDescTitle2 = document.querySelector('.resultDescTitle2');
+    const sd1 = document.querySelector('.pur_list1');
+    const sd2 =  document.querySelector('.pur_list2');
+    const sd3 =  document.querySelector('.pur_list3');
+    
     resultDescTitle2.innerHTML = infoList[point].descTitle2;
     resultDesc2.innerHTML = infoList[point].desc2;
     
+    sd1.addEventListener('click', ()=>{
+        window.open(infoList[point].purlist1);
+    })
+    sd2.addEventListener('click', ()=>{
+        window.open(infoList[point].purlist2);
+    })
+    sd3.addEventListener('click', ()=>{
+        window.open(infoList[point].purlist3);
+    })
+    
 }
-// const result_data =window.localStorage.getItem('result_data');
+
+const result_data=window.localStorage.getItem('result_data');
 
 function goResult() {
     //크롬은 webkit도 적어줘야해서 추가적으로 적어줌
