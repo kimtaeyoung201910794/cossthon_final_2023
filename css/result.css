@@ -60,4 +60,7 @@
     z-index: 1;
     position: relative;
     bottom: 20px;
+    position: fixed;
+    top: 100px;
+    width: 100%;
 }

@@ -17,6 +17,7 @@
     font-style: normal;
 }
 
+
 .jalnan{
     font-family: 'yg-jalnan'
 }
@@ -25,22 +26,25 @@
     font-family: 'GmarketSansLight'
 }
 
-video {
+video{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100vh;
     opacity: 0.5;
     background-attachment: fixed;
     margin: 0;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
    
 }
 .container {
     width: 100%;
     height: 100%;
-    margin: 0;
+    
 }
 .body{
     width: 100%;
     height: 100%;
 }
+
 

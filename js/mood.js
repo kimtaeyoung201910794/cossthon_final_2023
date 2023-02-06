@@ -1,3 +1,4 @@
+
 //main을 선택해주어야 하기 때문에 queryselector을 이용해서 main을 가져와줌
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
@@ -48,7 +49,7 @@ function addAnswer(answerText,qIdx,idx){
     
     //클릭 이벤트 사용해주기
     answer.addEventListener("click",function(){
-        var children = document.querySelectorAll('.answerList');
+        var children= document.querySelectorAll('.answerList');
         for(let i=0; i<children.length; i++){
             children[i].disabled = true;
 
@@ -812,15 +813,15 @@ function setResult(){
     resultName.innerHTML = infoList[point].name;
 
 
-    if (window.localStorage.getItem("result_data") === null) {
-        const arr = [infoList[point].name];
-        window.localStorage.setItem('result_data', JSON.stringify(arr));
-    }
-    else {
-        const arr = JSON.parse(localStorage.getItem("result_data"));
-        arr.push(infoList[point].name);
-        window.localStorage.setItem('result_data', JSON.stringify(arr));
-    }
+    // if (window.localStorage.getItem("result_data") === null) {
+    //     const arr = [infoList[point].name];
+    //     // window.localStorage.setItem('result_data', JSON.stringify(arr));
+    // }
+    // else {
+    //     const arr = JSON.parse(localStorage.getItem("result_data"));
+    //     arr.push(infoList[point].name);
+    //     // window.localStorage.setItem('result_data', JSON.stringify(arr));
+    // }
     
 
 
@@ -846,7 +847,7 @@ function setResult(){
     resultDesc2.innerHTML = infoList[point].desc2;
     
 }
-const result_data =window.localStorage.getItem('result_data');
+// const result_data =window.localStorage.getItem('result_data');
 
 function goResult() {
     //크롬은 webkit도 적어줘야해서 추가적으로 적어줌
@@ -894,7 +895,7 @@ function goNext(qIdx){
     }
 
     var countStatusNum = document.querySelector('.countStatus');
-    countStatusNum.innerHTML = (qIdx + 1)+"/"+ endPoint;
+    countStatusNum.innerHTML = (qIdx +1)+"/"+ endPoint;
 
     //statusbar생성해주기
     var status = document.querySelector('.statusBar');
@@ -904,8 +905,8 @@ function goNext(qIdx){
 
 
 
-//start함수를 만들어서 클릭이 되었을때 main페이지는 사라지고 
-//qna페이지가 나타나게끔 하는 함수 만들기
+// start함수를 만들어서 클릭이 되었을때 main페이지는 사라지고 
+// qna페이지가 나타나게끔 하는 함수 만들기
 function start() {
     //크롬은 webkit도 적어줘야해서 추가적으로 적어줌
 

@@ -21,9 +21,10 @@ p{
     color: whitesmoke;
 }
 .sc1 {
-    margin-top: -700px;
-    z-index: 1;
-    position: relative;
+    z-index: 51;
+    position: fixed;
+    width: 100%;
+    top: 120px;
 }
 
 .but{
